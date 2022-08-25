@@ -36,7 +36,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying....'
+        echo 'Deploying.....'
         script {
 
           openshift.withCluster() { 
@@ -44,7 +44,7 @@ pipeline {
             def deployment = openshift.selector("dc", "openshift-jenkins") 
     
             if(!deployment.exists()){ 
-              openshift.newApp('openshift-jenkins', "--as-deployment-config").narrow('svc').expose() 
+               openshift.newApp('openshift-jenkins', "--as-deployment-config").narrow('svc').expose() 
             } 
     
            timeout(5) { 
