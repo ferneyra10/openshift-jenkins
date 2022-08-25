@@ -10,7 +10,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        
        sh 'mvn clean package'
       }
     }
@@ -29,7 +28,8 @@ pipeline {
              openshift.newBuild("--name=openshift-jenkins", "--docker-image=registry.redhat.io/jboss-eap-7/eap74-openjdk8-openshift-rhel7", "--binary") 
       } 
     
-          openshift.selector("bc", "openshift-jenkins").startBuild("--from-file=target/simple-servlet-0.0.1-SNAPSHOT.war", "--follow") } }
+          openshift.selector("bc", "openshift-jenkins")
+                   .startBuild("--from-file=target/simple-servlet-0.0.1.war", "--follow") } }
 
         }
       }
