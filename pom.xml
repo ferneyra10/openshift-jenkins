@@ -4,7 +4,7 @@
 
   <groupId>org.codelikethewind</groupId>
   <artifactId>simple-servlet</artifactId>
-  <version>1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>simple-servlet</name>
